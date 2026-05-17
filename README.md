@@ -8,7 +8,7 @@ Avaliação Prática 01 - Backend II
 
 ```sql
 CREATE DATABASE produtos;
-CREATE USER IF NOT EXISTS 'avaliacao_fullstack'@'localhost' IDENTIFIED BY avaliacao_fullstack';
+CREATE USER IF NOT EXISTS 'avaliacao_fullstack'@'localhost' IDENTIFIED BY 'avaliacao_fullstack';
 GRANT ALL PRIVILEGES ON produtos.* TO 'avaliacao_fullstack'@'localhost';
 FLUSH PRIVILEGES;
 ```
