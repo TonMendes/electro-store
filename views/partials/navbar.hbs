@@ -10,20 +10,20 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarConteudo">
-      <ul class="navbar-nav me-auto nav-fill w-100">
+      <ul class="navbar-nav nav-fill me-auto">
         <li class="nav-item">
-          <a class="nav-link" href="/nossa-historia"><i
-              class="bi bi-clock-history"
-            ></i>
-            Nossa História</a>
+          <a class="nav-link text-nowrap" href="/nossa-historia">
+            <i class="bi bi-clock-history"></i>
+            Nossa História
+          </a>
         </li>
         {{#if user}}
           {{#if (eq user.perfil "admin")}}
             <li class="nav-item">
-              <a class="nav-link" href="/produtos/cria"><i
-                  class="bi bi-plus-square"
-                ></i>
-                Cadastrar Produto</a>
+              <a class="nav-link text-nowrap" href="/produtos/cria">
+                <i class="bi bi-plus-square"></i>
+                Cadastrar Produto
+              </a>
             </li>
           {{/if}}
         {{/if}}
@@ -31,27 +31,29 @@
       <ul class="navbar-nav ms-auto">
         {{#if user}}
           <li class="nav-item">
-            <span class="nav-link"><i class="bi bi-person-circle"></i>
-              {{user.nome}}</span>
+            <span class="nav-link text-nowrap">
+              <i class="bi bi-person-circle"></i>
+              {{user.nome}}
+            </span>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/usuarios/logout"><i
-                class="bi bi-box-arrow-right"
-              ></i>
-              Sair</a>
+            <a class="nav-link text-nowrap" href="/usuarios/logout">
+              <i class="bi bi-box-arrow-right"></i>
+              Sair
+            </a>
           </li>
         {{else}}
           <li class="nav-item">
-            <a class="nav-link" href="/usuarios/login"><i
-                class="bi bi-box-arrow-in-right"
-              ></i>
-              Login</a>
+            <a class="nav-link text-nowrap" href="/usuarios/login">
+              <i class="bi bi-box-arrow-in-right"></i>
+              Login
+            </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/usuarios/cria"><i
-                class="bi bi-person-plus"
-              ></i>
-              Cadastro Usuário</a>
+            <a class="nav-link text-nowrap" href="/usuarios/cria">
+              <i class="bi bi-person-plus"></i>
+              Cadastro Usuário
+            </a>
           </li>
         {{/if}}
       </ul>
