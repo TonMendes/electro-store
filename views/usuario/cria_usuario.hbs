@@ -1,0 +1,58 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Cadastro de Usuário</h5>
+
+    {{#if errors}}
+      <div class="alert alert-danger">
+        <ul class="mb-0">
+          {{#each errors}}
+            <li>{{msg}}</li>
+          {{/each}}
+        </ul>
+      </div>
+    {{/if}}
+
+    <form method="POST" action="/usuarios/cria">
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="nome" class="form-label">Nome completo</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nome"
+            name="nome"
+            value="{{old.nome}}"
+          />
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="email" class="form-label">E-mail</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            value="{{old.email}}"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="senha" class="form-label">Senha</label>
+          <input type="password" class="form-control" id="senha" name="senha" />
+          <small class="text-muted">Mínimo de 6 caracteres.</small>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="confirma_senha" class="form-label">Confirmar senha</label>
+          <input
+            type="password"
+            class="form-control"
+            id="confirma_senha"
+            name="confirma_senha"
+          />
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Cadastrar</button>
+      <a href="/" class="btn btn-light">Cancelar</a>
+    </form>
+  </div>
+</div>
