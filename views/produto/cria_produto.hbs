@@ -1,0 +1,60 @@
+<div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Cadastro de Produto</h5>
+
+      {{#if errors}}
+        <div class="alert alert-danger">
+          <ul class="mb-0">
+            {{#each errors}}
+              <li>{{msg}}</li>
+            {{/each}}
+          </ul>
+        </div>
+      {{/if}}
+
+      <form method="POST" action="/produtos/cria">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="nome" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="nome" name="nome" value="{{old.nome}}">
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="preco" class="form-label">Preço (R$)</label>
+            <input type="number" step="0.01" min="0" class="form-control" id="preco" name="preco" value="{{old.preco}}">
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="descricao" class="form-label">Descrição</label>
+          <textarea class="form-control" id="descricao" name="descricao" rows="3">{{old.descricao}}</textarea>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <label for="quantidade" class="form-label">Quantidade em Estoque</label>
+            <input type="number" min="0" step="1" class="form-control" id="quantidade" name="quantidade" value="{{old.quantidade}}">
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="status" class="form-label">Status</label>
+            <select class="form-select" id="status" name="status">
+              <option value="">Selecione...</option>
+              <option value="ativo" {{#if (eq old.status 'ativo')}}selected{{/if}}>Ativo</option>
+              <option value="inativo" {{#if (eq old.status 'inativo')}}selected{{/if}}>Inativo</option>
+            </select>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="categoria_id" class="form-label">Categoria</label>
+            <select class="form-select" id="categoria_id" name="categoria_id">
+              <option value="">Selecione...</option>
+              {{#each categorias}}
+                <option value="{{id}}" {{#if (eq ../old.categoria_id id)}}selected{{/if}}>{{nome}}</option>
+              {{/each}}
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+        <a href="/" class="btn btn-light">Cancelar</a>
+      </form>
+    </div>
+  </div>
